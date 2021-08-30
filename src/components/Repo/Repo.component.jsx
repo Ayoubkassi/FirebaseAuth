@@ -3,6 +3,9 @@ import { Title , Main , Container } from './Repo.styles';
 import { connect } from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
 import './Repo.styles.css';
+import { createStructuredSelector } from 'reselect';
+import { selectProjects } from '../../redux/project/project.selectors';
+
 
 
 const columns = [
@@ -120,8 +123,8 @@ const Repo = ({projects}) => {
   )
 }
 
-const mapStateToProps = state => ({
-  projects : state.project.projects
+const mapStateToProps = createStructuredSelector({
+  projects : selectProjects
 })
 
 export default connect(mapStateToProps)(Repo);
