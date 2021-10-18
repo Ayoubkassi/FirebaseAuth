@@ -18,11 +18,12 @@ const RepowWithSpinner = WithSpinner(Repo);
 const SoftwarePage = ({updateProjects}) => {
 
   const [loading , setLoading ] = useState(true);
+  //const [projects , setProjects ] = useState(null);
 
   //const [projects , setProjects] = useState([]);
   let config = {
   headers: {
-    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzI0NTEwN2VlMTI4NzEyZTcwMzFjNmZmMzk0OWExMmVkNGNjMDg5NTRkMDUzZmM5OGFmM2YwOTAyMTAwNGRjNmJiZjBkMzEyMTBjNGVjZmUiLCJpYXQiOjE2Mjk5Nzc4MDAuMDE3MzU0LCJuYmYiOjE2Mjk5Nzc4MDAuMDE3MzU3LCJleHAiOjE2NjE1MTM3OTkuODk3Njg1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.LqAMhNps8Cl86H3JD3O56zgT89xmwzHeaGTsboGVbTDyrTFKfznKeuk2H--YyANTtKswru5Cud6giDtRR8bNfjIfcZOi83Lu5isutUPw9A-X5YLkw2uh2reLGoWaJLkgMC3aoFDHOywcE14R0C0cIWbfxNYZtVlF7TnPW9iR239VF7DdGwhFbSF1Tb4lQd5sW-iNnHjnbZKyCJjAqMsExVsFi3l37VlTUomowp-E1vbBj-5YQFCCU5iw8wVz0up0eELbUrmMFWpEwpf2MWdUjeHNMLvrNWuJLlkgZjMtVTE21h_2ortAgXU9Ye6eijUMWO2Rv0cU8fZpLHKfOxvB9VKF9NZKjoDOazobkSNN1uUC90V9uCWmkd61DiyrrmNSZAKT4Tjv1lx55qc1dBQY1NvtjUkSt3YeROLw3A6Ul5Ztz7dv3tJoFEfkGpRPCbkQ_u2nexc-bdlTdcIb20ADCFjySPXvlPYmnCK0KqPXPIByUdytscLFEh7LoQC9fGAZLdVJu2oOGa2Yldl90ZEQzcIwOCYoT1Dtm8MrspzJpC3nzjlOqYKP45YT5-7UtTYJlzBRFqQGDrLBpwBNcL0chFJhLUYPtMp9VRK8jDW8d6zuHw841W-fbEUQfgfaqHuKQPwry3ikxmcUa1X8fb3vac9na6GuPPC0M4w00dNkH4M",
+    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiN2NlYzRmNWVhNjFhNGU5YTJhMjBlM2ZjN2YyZTFiNjU5MjgyMzNkNjA1NmI2NDUwZmY5YjA5ZWVkOGYwY2JmNjgyNGU4MzA1Y2YwYjYzMzciLCJpYXQiOjE2MzQ1ODYxMDguNDIyMzU1LCJuYmYiOjE2MzQ1ODYxMDguNDIyMzU4LCJleHAiOjE2NjYxMjIxMDguMjQ1NDI5LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.d6uYG95jvSi65m9JL0dMtEIjq4eagCMcGYHlFqadamPNZRyai55ECmStnNg0em5xSVn-_rzkgRaN_At8TvwdW89qM8B7ERBY0rEytBhE3j-E4aHNqWT2qaEwvBN0_Kf56dOwIZ30OkTSKpH2gKA_YJKuiNY_GQ4ruD5b8U5hZklXk985x65nZ_7010ATpVDQFC-i6gT_PFJlG14h5C_jXPo7BRBVMiHAqS9jtF-Gy9H9LhaGA_SVaLtMcis4gr5U35rLIYqMVAynQ0_IsKsqt60SrvTUCp5pIyxEwR5H7IDLoy-HzhuC5k4_kt9aEQ2l5tUnwADKdq9K1WPK2CDr7cdleZe0YtYqK-WbHK-XO9yv5vjcOHKwde0X6q-amAguMXDDh5i2ff-roHHWMlTn2sOyL_x59M3E2Xs0trCH2KmFmn-k35hzqogHw4JNjNhMxY06T6x40nZ0ktxDNhssmcclq29y3SDRjnu9Ww69UG1wIAlWI1MZm7WFYwepsAb7E-85Va-0BaNgkkiEcjubRtk6yh7FbxKBwv4QYZzBe6sTEPTC4BWt3VbnjygvPI5KE0P8hFKqMUWSaVUls9FoTnrcxtARipPpGkNDDqJQJVIaUS27Gy4CRQsq3UEm-2yHJ71zeotDvyZstc6n7KHVf5hFSaw1GUGF-ngDr35xXck",
     Accept : "Application/json"
   }
 }
@@ -30,12 +31,22 @@ const SoftwarePage = ({updateProjects}) => {
 // useEffect(()=>{
 //   axios.get('/api/projects',config).then(res => {
 //     updateProjects(res.data.data);
+//     //setProjects(res.data.data);
 //     setLoading(false);
+//     //add projects into firebase
+//     // res.data.data.map((project) =>(
+//     //       firebase.firestore().collection('projects').add({
+//     //           project : project
+//     //       })
+//     //
+//     //   ));
 //
 //
 //   })
 //                           .catch(err => console.log(err));
 // },[]);
+
+
 
 let projects = [];
 useEffect(()=>{
@@ -50,14 +61,14 @@ useEffect(()=>{
 
   });
 
-/*
-  Add our project into the firestore
-projects.map((project) =>(
-      firebase.firestore().collection('projects').add({
-          project : project
-      })
 
-  ));*/
+//  Add our project into the firestore
+// projects.map((project) =>(
+//       firebase.firestore().collection('projects').add({
+//           project : project
+//       })
+//
+//   ));
 },[]);
 
 
